@@ -15,11 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.paginationView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
-        self.paginationView.delegate = self
-        self.paginationView.dataSource = self
-        self.paginationView.reloadData()
-
+        self.title = "Pagination"
         /*
         self.dataManag.fetchList { (response) in
             print(response)
@@ -44,7 +40,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell: TableViewCell = self.paginationView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "paginationCell", for: indexPath) as! paginationCell
         cell.status.text = "In Progress"
         cell.businessName.text = "1344gsyehs#_&(_)$)_(/!\";'\"*!%"
         cell.businessDNO.text = "405, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072, India"
@@ -56,6 +52,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "attachmentsID", sender: self)
+//        self.performSegue(withIdentifier: "attachmentsID", sender: self)
     }
 }

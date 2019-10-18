@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  paginationCell.swift
 //  POC
 //
 //  Created by Sai on 18/10/19.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class paginationCell: UITableViewCell {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var businessDNO: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
