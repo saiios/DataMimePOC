@@ -13,6 +13,7 @@ class MySubmissionsVC: UIViewController {
     var submissionsData: [MySubmissionsModel] = []
 
     @IBOutlet weak var paginationView: UITableView!
+    var pageNumber = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class MySubmissionsVC: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "My Submissions"
         
-        self.dataManag.fetchList { (response) in
+        self.dataManag.fetchList(pageNumber: self.pageNumber) { (response) in
             print(response)
             self.submissionsData = response
             self.paginationView.reloadData()
@@ -34,7 +35,7 @@ class MySubmissionsVC: UIViewController {
     
     func loadNextData() {
 //        self.startSpinner()
-            self.dataManag.fetchList { (response) in
+        self.dataManag.fetchList(pageNumber: self.pageNumber) { (response) in
                 print(response)
                 self.submissionsData = self.submissionsData + response
                 print(self.submissionsData)
@@ -55,13 +56,11 @@ class MySubmissionsVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.submissionsData.count
-//        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +70,10 @@ extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
         cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
 
         if indexPath.row == self.submissionsData.count - 1 {
-            self.loadNextData()
+//            if !(paginationView.indexPathsForVisibleRows?.contains(indexPath) ?? <#default value#>) {
+              self.pageNumber = self.pageNumber + 1
+              self.loadNextData()
+//            }
         }
         return cell
     }
