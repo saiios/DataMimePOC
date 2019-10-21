@@ -1,5 +1,5 @@
 //
-//  paginationCell.swift
+//  MySubmissionCell.swift
 //  POC
 //
 //  Created by Sai on 18/10/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class paginationCell: UITableViewCell {
+class MySubmissionCell: UITableViewCell {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var businessDNO: UILabel!

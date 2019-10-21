@@ -31,7 +31,21 @@ class MySubmissionsVC: UIViewController {
             self.paginationView.reloadData()
         }
     }
-
+    
+    func loadNextData() {
+//        self.startSpinner()
+            self.dataManag.fetchList { (response) in
+                print(response)
+                self.submissionsData = self.submissionsData + response
+                print(self.submissionsData)
+                
+                sleep(1)
+                DispatchQueue.main.async {
+                self.paginationView.reloadData()
+//                    self.stopSpinner()
+                }
+            }
+    }
     /*
     // MARK: - Navigation
 
@@ -51,14 +65,14 @@ extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "paginationCell", for: indexPath) as! paginationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MySubmissionCell", for: indexPath) as! MySubmissionCell
         cell.status.text = self.submissionsData[indexPath.row].status
         cell.businessName.text = self.submissionsData[indexPath.row].businessName
         cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
 
-//        if indexPath.row == self.paginationData.count - 1 {
-//            self.loadNextData()
-//        }
+        if indexPath.row == self.submissionsData.count - 1 {
+            self.loadNextData()
+        }
         return cell
     }
        
