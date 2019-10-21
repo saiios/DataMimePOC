@@ -1,5 +1,5 @@
 //
-//  PaginationModel.swift
+//  MySubmissionsModel.swift
 //  POC
 //
 //  Created by Sai on 21/10/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaginationModel: Codable {
+struct MySubmissionsModel: Codable {
     let wid: String
     let created_on: String
     let modified_on: String

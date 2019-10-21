@@ -11,7 +11,7 @@ import Alamofire
 
 class DataManager {
     
-    func fetchList(complitionHandler: @escaping(_ response:[PaginationModel]) -> Void) {
+    func fetchList(complitionHandler: @escaping(_ response:[MySubmissionsModel]) -> Void) {
         // Check network connectivity
         if isConnectedToInternet() {
             let headers: HTTPHeaders = [
@@ -39,7 +39,7 @@ class DataManager {
                        return
                      }
                            do {
-                            let responseData = try JSONDecoder().decode([PaginationModel].self, from: response.data!)
+                            let responseData = try JSONDecoder().decode([MySubmissionsModel].self, from: response.data!)
                             complitionHandler (responseData)
                            } catch {
                                print(error.localizedDescription)
