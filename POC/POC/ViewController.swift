@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         self.paginationView.dataSource = self
         self.paginationView.reloadData()
 
-        /*
+        
         self.dataManag.fetchList { (response) in
             print(response)
 //            self.paginationData = self.paginationData + response
@@ -32,14 +32,13 @@ class ViewController: UIViewController {
 //                self.stopSpinner()
 //            }
         }
-        */
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.paginationData.count
-        return 20
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

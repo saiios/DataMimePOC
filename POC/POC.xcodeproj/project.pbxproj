@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */; };
 		326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084A23597A12009A7E08 /* AppDelegate.swift */; };
 		326D084D23597A12009A7E08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084C23597A12009A7E08 /* SceneDelegate.swift */; };
 		326D084F23597A12009A7E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084E23597A12009A7E08 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBusinessViewController.swift; sourceTree = "<group>"; };
 		2C60E6F295BA08412482BCDB /* Pods_POC_POCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_POCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D084723597A12009A7E08 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D084A23597A12009A7E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				326D084A23597A12009A7E08 /* AppDelegate.swift */,
 				326D084C23597A12009A7E08 /* SceneDelegate.swift */,
 				326D084E23597A12009A7E08 /* ViewController.swift */,
+				2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */,
 				326D088323598373009A7E08 /* TableViewCell.swift */,
 				326D087D23597AE6009A7E08 /* DataManager.swift */,
 				326D085023597A12009A7E08 /* Main.storyboard */,
@@ -420,6 +423,7 @@
 				326D087E23597AE6009A7E08 /* DataManager.swift in Sources */,
 				326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */,
 				326D088423598373009A7E08 /* TableViewCell.swift in Sources */,
+				2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */,
 				326D085523597A12009A7E08 /* POC.xcdatamodeld in Sources */,
 				326D084D23597A12009A7E08 /* SceneDelegate.swift in Sources */,
 			);
