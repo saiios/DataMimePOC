@@ -10,13 +10,29 @@ import UIKit
 
 class AddEditBusinessViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var txtLocality: UITextField!
+    @IBOutlet weak var txtLatLon: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtState: UITextField!
+    @IBOutlet weak var txtPinCode: UITextField!
+    @IBOutlet weak var txtCountry: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    func initialSetUp() {
+        self.scrollView.contentSize = CGSize (width: 0, height: 762)
+    }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

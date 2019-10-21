@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957.9710144927537" y="115.84821428571428"/>
+            <point key="canvasLocation" x="1813" y="116"/>
         </scene>
         <!--My SubmissionsVC-->
         <scene sceneID="is8-6q-w0L">
@@ -151,12 +151,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyU-zQ-j7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2621.739130434783" y="114.50892857142857"/>
+            <point key="canvasLocation" x="2578" y="116"/>
         </scene>
         <!--Add/Edit Business-->
         <scene sceneID="kvw-4O-ZDa">
             <objects>
-                <viewController id="V9S-1M-yvd" sceneMemberID="viewController">
+                <viewController id="V9S-1M-yvd" customClass="AddEditBusinessViewController" customModule="POC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6z-Zp-Fbc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,7 +241,7 @@
                                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitude/Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rg0-X8-SkQ">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Longitude/Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rg0-X8-SkQ">
                                                 <rect key="frame" x="8" y="244" width="349" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="hFp-5l-Svu"/>
@@ -362,6 +362,9 @@
                                                 <state key="normal" title="NEXT">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextAction:" destination="V9S-1M-yvd" eventType="touchUpInside" id="z2r-Zc-lXB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93330568079999998" green="0.92549449210000001" blue="0.92548996210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -462,10 +465,20 @@
                         <viewLayoutGuide key="safeArea" id="tHY-Ci-Toh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit Business" id="dez-8a-eiw"/>
+                    <connections>
+                        <outlet property="scrollView" destination="scz-Zm-dbV" id="3Si-Vd-hru"/>
+                        <outlet property="txtAddress" destination="wcV-we-VMS" id="Sho-aZ-8k5"/>
+                        <outlet property="txtCity" destination="YdB-da-HkA" id="xvy-n2-0QG"/>
+                        <outlet property="txtCountry" destination="LBj-77-OM3" id="jx5-zt-2MH"/>
+                        <outlet property="txtLatLon" destination="Rg0-X8-SkQ" id="Hhy-RV-mF7"/>
+                        <outlet property="txtLocality" destination="kbv-cd-IUf" id="sNu-YR-zF8"/>
+                        <outlet property="txtPinCode" destination="wQW-8K-6BV" id="qS1-tB-5Nq"/>
+                        <outlet property="txtState" destination="KBG-2h-6m7" id="GNV-Lx-39D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kv-qL-1OO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2886.9565217391305" y="115.84821428571428"/>
+            <point key="canvasLocation" x="3332" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O3x-kL-7UI">
