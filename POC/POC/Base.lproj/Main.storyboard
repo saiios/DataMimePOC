@@ -146,7 +146,7 @@
                     <navigationItem key="navigationItem" id="BaO-LI-wZG"/>
                     <connections>
                         <outlet property="paginationView" destination="n9J-Fj-7I7" id="NfQ-0V-nv9"/>
-                        <segue destination="V9S-1M-yvd" kind="show" id="s27-A4-AlR"/>
+                        <segue destination="V9S-1M-yvd" kind="show" identifier="AddOrEditBusiness" id="s27-A4-AlR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyU-zQ-j7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

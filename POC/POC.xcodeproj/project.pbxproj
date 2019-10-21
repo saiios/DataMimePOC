@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */; };
+		2CB2BA85235DCED800AB1839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2BA84235DCED800AB1839 /* ViewController.swift */; };
 		326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084A23597A12009A7E08 /* AppDelegate.swift */; };
 		326D084D23597A12009A7E08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084C23597A12009A7E08 /* SceneDelegate.swift */; };
-		326D084F23597A12009A7E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084E23597A12009A7E08 /* ViewController.swift */; };
 		326D085223597A12009A7E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326D085023597A12009A7E08 /* Main.storyboard */; };
 		326D085523597A12009A7E08 /* POC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 326D085323597A12009A7E08 /* POC.xcdatamodeld */; };
 		326D085723597A13009A7E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326D085623597A13009A7E08 /* Assets.xcassets */; };
@@ -46,10 +46,10 @@
 /* Begin PBXFileReference section */
 		2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBusinessViewController.swift; sourceTree = "<group>"; };
 		2C60E6F295BA08412482BCDB /* Pods_POC_POCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_POCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB2BA84235DCED800AB1839 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../../Downloads/DataMimePOC-master/POC/POC/ViewControllers/ViewController.swift"; sourceTree = "<group>"; };
 		326D084723597A12009A7E08 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D084A23597A12009A7E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		326D084C23597A12009A7E08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		326D084E23597A12009A7E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		326D085123597A12009A7E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		326D085423597A12009A7E08 /* POC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = POC.xcdatamodel; sourceTree = "<group>"; };
 		326D085623597A13009A7E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		326D086B23597A13009A7E08 /* POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D086F23597A13009A7E08 /* POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCUITests.swift; sourceTree = "<group>"; };
 		326D087123597A13009A7E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		326D087D23597AE6009A7E08 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		326D087D23597AE6009A7E08 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../DataManager.swift; sourceTree = "<group>"; };
 		326D088523599347009A7E08 /* paginationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paginationCell.swift; sourceTree = "<group>"; };
 		32A8DFF4235D92F500F17CE8 /* PaginationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationModel.swift; sourceTree = "<group>"; };
 		32A8DFF6235D992900F17CE8 /* MySubmissionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySubmissionsVC.swift; sourceTree = "<group>"; };
@@ -133,10 +133,6 @@
 				32A8DFF1235D929100F17CE8 /* ViewControllers */,
 				326D084A23597A12009A7E08 /* AppDelegate.swift */,
 				326D084C23597A12009A7E08 /* SceneDelegate.swift */,
-				326D084E23597A12009A7E08 /* ViewController.swift */,
-				2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */,
-				326D088323598373009A7E08 /* TableViewCell.swift */,
-				326D087D23597AE6009A7E08 /* DataManager.swift */,
 				326D085023597A12009A7E08 /* Main.storyboard */,
 				326D085623597A13009A7E08 /* Assets.xcassets */,
 				326D085823597A13009A7E08 /* LaunchScreen.storyboard */,
@@ -167,7 +163,8 @@
 		32A8DFF1235D929100F17CE8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				326D084E23597A12009A7E08 /* ViewController.swift */,
+				2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */,
+				2CB2BA84235DCED800AB1839 /* ViewController.swift */,
 				32A8DFF6235D992900F17CE8 /* MySubmissionsVC.swift */,
 				326D088523599347009A7E08 /* paginationCell.swift */,
 			);
@@ -452,11 +449,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				326D084F23597A12009A7E08 /* ViewController.swift in Sources */,
 				32A8DFF5235D92F500F17CE8 /* PaginationModel.swift in Sources */,
 				326D087E23597AE6009A7E08 /* DataManager.swift in Sources */,
 				326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */,
-				326D088423598373009A7E08 /* TableViewCell.swift in Sources */,
+				2CB2BA85235DCED800AB1839 /* ViewController.swift in Sources */,
 				2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */,
 				326D085523597A12009A7E08 /* POC.xcdatamodeld in Sources */,
 				326D084D23597A12009A7E08 /* SceneDelegate.swift in Sources */,

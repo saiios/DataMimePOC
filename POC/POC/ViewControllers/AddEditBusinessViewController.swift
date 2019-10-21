@@ -19,6 +19,8 @@ class AddEditBusinessViewController: UIViewController {
     @IBOutlet weak var txtPinCode: UITextField!
     @IBOutlet weak var txtCountry: UITextField!
     
+    var businessID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,7 @@ class AddEditBusinessViewController: UIViewController {
     }
     
     func initialSetUp() {
-        self.scrollView.contentSize = CGSize (width: 0, height: 762)
+        self.scrollView.contentSize = CGSize (width: 0, height: 2000)
     }
     
     @IBAction func nextAction(_ sender: Any) {

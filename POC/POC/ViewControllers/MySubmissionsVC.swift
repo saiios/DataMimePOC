@@ -47,15 +47,20 @@ class MySubmissionsVC: UIViewController {
                 }
             }
     }
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "AddOrEditBusiness" {
+            let editBusiness = segue.destination as! AddEditBusinessViewController
+            editBusiness.businessID = self.submissionsData[(sender as! Int)].businessDno
+        }
     }
-    */
+    
 }
 
 extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
@@ -71,14 +76,14 @@ extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.row == self.submissionsData.count - 1 {
 //            if !(paginationView.indexPathsForVisibleRows?.contains(indexPath) ?? <#default value#>) {
-              self.pageNumber = self.pageNumber + 1
-              self.loadNextData()
+             // self.pageNumber = self.pageNumber + 1
+              //self.loadNextData()
 //            }
         }
         return cell
     }
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "attachmentsID", sender: self)
+        self.performSegue(withIdentifier: "AddOrEditBusiness", sender: indexPath.row)
     }
 }
