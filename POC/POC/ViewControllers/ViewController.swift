@@ -10,14 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func list(_ sender: Any) {
-                           self.performSegue(withIdentifier: "submissionListID", sender: self)
-
-       }
+     self.performSegue(withIdentifier: "submissionListID", sender: self)
+    }
 }
 
 
