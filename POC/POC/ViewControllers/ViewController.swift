@@ -10,40 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
     let dataManag = DataManager()
+    var submissionsData: [PaginationModel] = []
+
     @IBOutlet weak var paginationView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "Pagination"
-        /*
+        self.title = "My Submissions"
+        
         self.dataManag.fetchList { (response) in
             print(response)
-//            self.paginationData = self.paginationData + response
-//            print(self.paginationData)
-//
-//            sleep(1)
-//            DispatchQueue.main.async {
-//            self.paginationView.reloadData()
-//                self.stopSpinner()
-//            }
+            self.submissionsData = response
+            self.paginationView.reloadData()
         }
-        */
+        
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.paginationData.count
-        return 20
+        return self.submissionsData.count
+//        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell: TableViewCell = self.paginationView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "paginationCell", for: indexPath) as! paginationCell
-        cell.status.text = "In Progress"
-        cell.businessName.text = "1344gsyehs#_&(_)$)_(/!\";'\"*!%"
-        cell.businessDNO.text = "405, K P H B Phase 3, Kukatpally, Hyderabad, Telangana 500072, India"
+        cell.status.text = self.submissionsData[indexPath.row].status
+        cell.businessName.text = self.submissionsData[indexPath.row].businessName
+        cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
 
 //        if indexPath.row == self.paginationData.count - 1 {
 //            self.loadNextData()
