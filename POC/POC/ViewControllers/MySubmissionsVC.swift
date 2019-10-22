@@ -11,12 +11,14 @@ import UIKit
 class MySubmissionsVC: UIViewController {
     let dataManag = DataManager()
     var submissionsData: [MySubmissionsModel] = []
+    var isFrom: String?
 
     @IBOutlet weak var paginationView: UITableView!
     var pageNumber = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(isFrom!)
         
         self.loadUI()
         // Do any additional setup after loading the view.
@@ -26,11 +28,26 @@ class MySubmissionsVC: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "My Submissions"
         
-        self.dataManag.fetchList(pageNumber: self.pageNumber) { (response) in
-            print(response)
-            self.submissionsData = response
-            self.paginationView.reloadData()
+//        var image = UIImage(named: "image-name")
+//        image = image?.withRenderingMode(.alwaysOriginal)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: nil)
+        if isFrom != "C"{
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         }
+        if  isFrom != "B" {
+            self.dataManag.fetchList(pageNumber: self.pageNumber) { (response) in
+                print(response)
+                self.submissionsData = response
+                self.paginationView.reloadData()
+            }
+        } else {
+            self.paginationView.isHidden = true
+        }
+        
+    }
+    
+    @objc func addTapped() {
+        print("Add clicked")
     }
     
     func loadNextData() {

@@ -14,8 +14,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func list(_ sender: Any) {
-     self.performSegue(withIdentifier: "submissionListID", sender: self)
+    @IBAction func A(_ sender: Any) {
+     self.performSegue(withIdentifier: "submissionID", sender: "A")
+    }
+    
+    @IBAction func B(_ sender: Any) {
+     self.performSegue(withIdentifier: "submissionID", sender: "B")
+    }
+    
+    @IBAction func C(_ sender: Any) {
+     self.performSegue(withIdentifier: "submissionID", sender: "C")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?) {
+        let vc = segue.destination as! MySubmissionsVC
+
+        if ((sender as! String) == "A") {
+            vc.isFrom = "A"
+        } else if ((sender as! String) == "B") {
+            vc.isFrom = "B"
+        } else if ((sender as! String) == "C") {
+            vc.isFrom = "C"
+        }
+        
     }
 }
 
