@@ -15,11 +15,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let regionsAry = ["India", "USA", "UAE"]
     let cityAry = ["MTM", "BZA", "VSKP", "HYD"]
     var selectedTag = ""
-    
+    var countries: [String] = []
+
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var pickerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for code in NSLocale.isoCountryCodes  {
+            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
+            let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
+            countries.append(name)
+        }
+
+        print(countries)
     }
     
     @IBAction func openRegionPicker(_ sender: Any) {
@@ -66,7 +75,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         print(component)
         if  selectedTag == "Region" {
-                    return regionsAry.count
+                    return countries.count
         } else {
             return cityAry.count
         }
@@ -74,7 +83,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if  selectedTag == "Region" {
-                    return regionsAry[row]
+                    return countries[row]
         } else {
             return cityAry[row]
         }
@@ -89,7 +98,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
          // use the row to get the selected row from the picker view
          // using the row extract the value from your datasource (array[row])
         if  selectedTag == "Region" {
-                    regionTextFiled.text = regionsAry[row]
+                    regionTextFiled.text = countries[row]
         } else {
             cityTextField.text = cityAry[row]
         }
