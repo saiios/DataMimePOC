@@ -12,7 +12,8 @@ class MySubmissionsVC: UIViewController {
     let dataManag = DataManager()
     var submissionsData: [MySubmissionsModel] = []
     var isFrom: String?
-
+   
+    
     @IBOutlet weak var paginationView: UITableView!
     var pageNumber = 1
     
@@ -31,10 +32,10 @@ class MySubmissionsVC: UIViewController {
 //        var image = UIImage(named: "image-name")
 //        image = image?.withRenderingMode(.alwaysOriginal)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style:.plain, target: nil, action: nil)
-        if isFrom != "C"{
+        if isFrom != "Enrichment"{
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         }
-        if  isFrom != "B" {
+        if  isFrom != "New" {
             self.dataManag.fetchList(pageNumber: self.pageNumber) { (response) in
                 print(response)
                 self.submissionsData = response
@@ -43,7 +44,6 @@ class MySubmissionsVC: UIViewController {
         } else {
             self.paginationView.isHidden = true
         }
-        
     }
     
     @objc func addTapped() {
@@ -74,6 +74,7 @@ class MySubmissionsVC: UIViewController {
     }
     */
 }
+
 
 extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
