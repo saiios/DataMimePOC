@@ -97,6 +97,6 @@ extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
     }
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "attachmentsID", sender: self)
+        self.performSegue(withIdentifier: "previewId", sender: self)
     }
 }

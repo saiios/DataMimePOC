@@ -16,12 +16,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let cityAry = ["MTM", "BZA", "VSKP", "HYD"]
     var selectedTag = ""
     var countries: [String] = []
-
+    
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var pickerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "FOS"
         for code in NSLocale.isoCountryCodes  {
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
             let name = NSLocale(localeIdentifier: "en_UK").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(code)"
