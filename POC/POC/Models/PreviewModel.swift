@@ -15,19 +15,19 @@ struct PreviewModel: Codable {
        let category1: String
        let category2: String
        let city : String
-       let consent: String
+       let consent: Bool
     let country: String
     let date: String
     let fireExit: Bool
     let firstAid: Bool
     let imageDate: String
-//    let images : [ Array<Any>]
+    let images : [String]
     let latitude : String
     let locality : String
     let parking : Bool
     let pincode : String
     let restroom : Bool
-//    let selfie : [Array<Any>]
+    let selfie : String
     let state : String
     let status : String
     let timings : String
