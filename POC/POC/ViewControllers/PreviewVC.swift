@@ -20,11 +20,11 @@ class PreviewVC: UIViewController {
         previewTable.register(UINib(nibName: "PreviewCell", bundle: nil), forCellReuseIdentifier: "PreviewCell")
         previewTable.register(UINib(nibName: "consentFormPreviewCell", bundle: nil), forCellReuseIdentifier: "consentForm")
 
-//        self.dataManag.fetchDetails(wid: "6f13b5d3-11ef-4022-84d9-00d76237f9a7") { (response) in
-//            print(response)
-////            self.submissionsData = response
-//            self.previewTable.reloadData()
-//        }
+        self.dataManag.fetchDetails(wid: "6f13b5d3-11ef-4022-84d9-00d76237f9a7") { (response) in
+            print(response)
+//            self.submissionsData = response
+            self.previewTable.reloadData()
+        }
     }
 
     /*
@@ -36,7 +36,6 @@ class PreviewVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
