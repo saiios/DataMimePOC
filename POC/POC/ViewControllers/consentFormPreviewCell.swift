@@ -10,6 +10,10 @@ import UIKit
 
 class consentFormPreviewCell: UITableViewCell {
 
+    @IBOutlet weak var selfie_img: UIImageView!
+    @IBOutlet weak var captureSelfie: UIButton!
+    @IBOutlet weak var previous: UIButton!
+    @IBOutlet weak var submit: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

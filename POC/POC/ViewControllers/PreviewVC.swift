@@ -14,7 +14,8 @@ class PreviewVC: UIViewController {
     let dataManag = DataManager()
     var detailObject : BusinessDetailModel?
     var previewImages = [String]()
-    
+    var businessID: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Preview"
@@ -24,7 +25,7 @@ class PreviewVC: UIViewController {
         previewTable.register(UINib(nibName: "ImagePreviewCell", bundle: nil), forCellReuseIdentifier: "imageCell")
         previewTable.register(UINib(nibName: "AddImagePreviewCell", bundle: nil), forCellReuseIdentifier: "addImage")
 
-        self.dataManag.fetchEachBusinessDetails(with: "6f13b5d3-11ef-4022-84d9-00d76237f9a7") { (response) in
+        self.dataManag.fetchEachBusinessDetails(with: businessID!) { (response) in
             print(response)
             self.detailObject = BusinessDetailModel (businessModel: response)
             self.previewImages = self.detailObject?.images ?? []
@@ -51,6 +52,17 @@ extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
+            cell.businessName.text = self.detailObject?.businessName
+            cell.businessDNo.text = self.detailObject?.businessDno
+            cell.category1.text = self.detailObject?.category1
+            cell.category2.text = self.detailObject?.category2
+
+            cell.locality.text = self.detailObject?.locality
+            cell.city.text = self.detailObject?.city
+            cell.state.text = self.detailObject?.state
+            cell.pincode.text = self.detailObject?.pincode
+            cell.country.text = self.detailObject?.country
+
             return cell
         }
         else if indexPath.row == 1{
@@ -58,6 +70,10 @@ extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == self.previewImages.count + 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "consentForm", for: indexPath) as! consentFormPreviewCell
+            if let decodedData = Data(base64Encoded: self.detailObject?.selfie ?? "", options: .ignoreUnknownCharacters) {
+                let image = UIImage(data: decodedData)
+                cell.selfie_img.image = image
+            }
             //        cell.status.text = self.submissionsData[indexPath.row].status
             //        cell.businessName.text = self.submissionsData[indexPath.row].businessName
             //        cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
@@ -71,6 +87,10 @@ extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
                     return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImagePreviewCell
+            if let decodedData = Data(base64Encoded: self.detailObject?.images?[indexPath.row - 2] ?? "", options: .ignoreUnknownCharacters) {
+                let image = UIImage(data: decodedData)
+                cell.img_img.image = image
+            }
             return cell
         }
     }

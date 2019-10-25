@@ -75,6 +75,9 @@ class MySubmissionsVC: UIViewController {
         if segue.identifier == "AddOrEditBusiness" {
             let editBusiness = segue.destination as! AddEditBusinessViewController
             editBusiness.businessID = self.submissionsData[(sender as! Int)].wid
+        } else if segue.identifier == "previewId" {
+            let editBusiness = segue.destination as! PreviewVC
+            editBusiness.businessID = self.submissionsData[(sender as! Int)].wid
         }
     }
     

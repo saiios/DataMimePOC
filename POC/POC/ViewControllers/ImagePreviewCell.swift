@@ -10,6 +10,8 @@ import UIKit
 
 class ImagePreviewCell: UITableViewCell {
 
+    @IBOutlet weak var img_img: UIImageView!
+    @IBOutlet weak var img_date: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
