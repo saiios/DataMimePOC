@@ -102,6 +102,6 @@ extension MySubmissionsVC: UITableViewDelegate, UITableViewDataSource {
     }
        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "AddOrEditBusiness", sender: indexPath.row)
+        self.performSegue(withIdentifier: "previewId", sender: indexPath.row)
     }
 }

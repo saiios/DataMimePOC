@@ -54,7 +54,7 @@ class DataManager {
         // Check network connectivity
         if isConnectedToInternet() {
 
-        let todoEndpoint: String = "https://securedev.datamime.com/fos/api/v1/listings/7a090d53-6ea8-402a-9d2e-6a6bb115741f"
+        let todoEndpoint: String = "https://securedev.datamime.com/fos/api/v1/listings/6f13b5d3-11ef-4022-84d9-00d76237f9a7"
             
             AF.request(todoEndpoint, headers:self.headers).responseJSON { response in
                      // check for errors

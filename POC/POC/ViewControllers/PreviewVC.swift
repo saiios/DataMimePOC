@@ -12,17 +12,22 @@ class PreviewVC: UIViewController {
 
     @IBOutlet weak var previewTable: UITableView!
     let dataManag = DataManager()
-
+    var detailObject : BusinessDetailModel?
+    var previewImages = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Preview"
         // Do any additional setup after loading the view.
         previewTable.register(UINib(nibName: "PreviewCell", bundle: nil), forCellReuseIdentifier: "PreviewCell")
         previewTable.register(UINib(nibName: "consentFormPreviewCell", bundle: nil), forCellReuseIdentifier: "consentForm")
+        previewTable.register(UINib(nibName: "ImagePreviewCell", bundle: nil), forCellReuseIdentifier: "imageCell")
+        previewTable.register(UINib(nibName: "AddImagePreviewCell", bundle: nil), forCellReuseIdentifier: "addImage")
 
-        self.dataManag.fetchDetails(wid: "6f13b5d3-11ef-4022-84d9-00d76237f9a7") { (response) in
+        self.dataManag.fetchEachBusinessDetails(with: "6f13b5d3-11ef-4022-84d9-00d76237f9a7") { (response) in
             print(response)
-//            self.submissionsData = response
+            self.detailObject = BusinessDetailModel (businessModel: response)
+            self.previewImages = self.detailObject?.images ?? []
             self.previewTable.reloadData()
         }
     }
@@ -40,32 +45,47 @@ class PreviewVC: UIViewController {
 
 extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3 + self.previewImages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "consentForm", for: indexPath) as! consentFormPreviewCell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
             return cell
         }
-        else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "PreviewCell", for: indexPath) as! PreviewCell
-        //        cell.status.text = self.submissionsData[indexPath.row].status
-        //        cell.businessName.text = self.submissionsData[indexPath.row].businessName
-        //        cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
-        //
-        //        if indexPath.row == self.submissionsData.count - 1 {
-        ////            if !(paginationView.indexPathsForVisibleRows?.contains(indexPath) ?? <#default value#>) {
-        //              self.pageNumber = self.pageNumber + 1
-        //              self.loadNextData()
-        ////            }
-        //        }
-                return cell
-                }
+        else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addImage", for: indexPath) as! AddImagePreviewCell
+            return cell
+        } else if indexPath.row == self.previewImages.count + 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "consentForm", for: indexPath) as! consentFormPreviewCell
+            //        cell.status.text = self.submissionsData[indexPath.row].status
+            //        cell.businessName.text = self.submissionsData[indexPath.row].businessName
+            //        cell.businessDNO.text = self.submissionsData[indexPath.row].businessDno
+            //
+            //        if indexPath.row == self.submissionsData.count - 1 {
+            ////            if !(paginationView.indexPathsForVisibleRows?.contains(indexPath) ?? <#default value#>) {
+            //              self.pageNumber = self.pageNumber + 1
+            //              self.loadNextData()
+            ////            }
+            //        }
+                    return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImagePreviewCell
+            return cell
+        }
     }
     
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 800;//Choose your custom row height
+        if indexPath.row == 0 {
+            return 754
+        }
+        else if indexPath.row == 1{
+            return 50
+        } else if indexPath.row == self.previewImages.count + 2 {
+            return 780
+        } else {
+            return 560
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
