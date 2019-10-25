@@ -57,7 +57,7 @@ class MySubmissionsVC: UIViewController {
         
         if segue.identifier == "AddOrEditBusiness" {
             let editBusiness = segue.destination as! AddEditBusinessViewController
-            editBusiness.businessID = self.submissionsData[(sender as! Int)].businessDno
+            editBusiness.businessID = self.submissionsData[(sender as! Int)].wid
         }
     }
     

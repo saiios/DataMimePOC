@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */; };
 		2CB2BA85235DCED800AB1839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2BA84235DCED800AB1839 /* ViewController.swift */; };
+		2CE59497235F0A3700F8B389 /* BusinessDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE59496235F0A3700F8B389 /* BusinessDetailModel.swift */; };
 		326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084A23597A12009A7E08 /* AppDelegate.swift */; };
 		326D084D23597A12009A7E08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D084C23597A12009A7E08 /* SceneDelegate.swift */; };
 		326D085223597A12009A7E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 326D085023597A12009A7E08 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		2C58D97F235D95E500742355 /* AddEditBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditBusinessViewController.swift; sourceTree = "<group>"; };
 		2C60E6F295BA08412482BCDB /* Pods_POC_POCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POC_POCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB2BA84235DCED800AB1839 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../../Downloads/DataMimePOC-master/POC/POC/ViewControllers/ViewController.swift"; sourceTree = "<group>"; };
+		2CE59496235F0A3700F8B389 /* BusinessDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailModel.swift; sourceTree = "<group>"; };
 		326D084723597A12009A7E08 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326D084A23597A12009A7E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		326D084C23597A12009A7E08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				32A8DFF4235D92F500F17CE8 /* PaginationModel.swift */,
+				2CE59496235F0A3700F8B389 /* BusinessDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 			files = (
 				32A8DFF5235D92F500F17CE8 /* PaginationModel.swift in Sources */,
 				326D087E23597AE6009A7E08 /* DataManager.swift in Sources */,
+				2CE59497235F0A3700F8B389 /* BusinessDetailModel.swift in Sources */,
 				326D084B23597A12009A7E08 /* AppDelegate.swift in Sources */,
 				2CB2BA85235DCED800AB1839 /* ViewController.swift in Sources */,
 				2C58D980235D95E500742355 /* AddEditBusinessViewController.swift in Sources */,
@@ -632,13 +636,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G7QCUR4MA3;
+				DEVELOPMENT_TEAM = WPRYHTSAZ3;
 				INFOPLIST_FILE = POC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sai.POC;
+				PRODUCT_BUNDLE_IDENTIFIER = sai.POC.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,13 +656,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G7QCUR4MA3;
+				DEVELOPMENT_TEAM = WPRYHTSAZ3;
 				INFOPLIST_FILE = POC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sai.POC;
+				PRODUCT_BUNDLE_IDENTIFIER = sai.POC.c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
