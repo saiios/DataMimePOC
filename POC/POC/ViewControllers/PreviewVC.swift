@@ -25,6 +25,8 @@ class PreviewVC: UIViewController {
         previewTable.register(UINib(nibName: "ImagePreviewCell", bundle: nil), forCellReuseIdentifier: "imageCell")
         previewTable.register(UINib(nibName: "AddImagePreviewCell", bundle: nil), forCellReuseIdentifier: "addImage")
 
+        
+        
         self.dataManag.fetchEachBusinessDetails(with: businessID!) { (response) in
             print(response)
             self.detailObject = BusinessDetailModel (businessModel: response)
@@ -98,6 +100,9 @@ extension PreviewVC: UITableViewDelegate, UITableViewDataSource {
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 754
+//            self.previewTable.rowHeight = UITableView.automaticDimension
+//            self.previewTable.estimatedRowHeight = 50
+//            return 50
         }
         else if indexPath.row == 1{
             return 50
